@@ -23,8 +23,8 @@ BLACK = (0, 0, 0)
 VL = (125, 0, 125)
 
 apple_img = pg.image.load("images\\apple.png")
-body3_img = pg.image.load("images\\body3.png")
-heard2_img = pg.image.load("images\\heard2.png")
+body_img = pg.image.load("images\\body.png")
+heard_img = pg.image.load("images\\heard.png")
 
 game_over = False
 clock = pg.time.Clock()
@@ -89,15 +89,15 @@ while not game_over:
     disp.fill(BLACK)
     for i in range(len(snake) - 1):
         #pg.draw.rect(disp, GREEN, [snake[i][0], snake[i][1], 40, 40])
-        disp.blit(body3_img, snake[i])
+        disp.blit(body_img, snake[i])
     if direction == "up":
-        disp.blit(heard2_img, [x, y])
+        disp.blit(heard_img, [x, y])
     if direction == "left":
-        disp.blit(pg.transform.rotate(heard2_img, 90), [x, y])
+        disp.blit(pg.transform.rotate(heard_img, 90), [x, y])
     if direction == "down":
-        disp.blit(pg.transform.rotate(heard2_img, 180), [x, y])
+        disp.blit(pg.transform.rotate(heard_img, 180), [x, y])
     if direction == "right":
-        disp.blit(pg.transform.rotate(heard2_img, 270), [x, y])
+        disp.blit(pg.transform.rotate(heard_img, 270), [x, y])
     #pg.draw.rect(disp, RED, (apple_x, apple_y, 40, 40))
     disp.blit(apple_img, [apple_x, apple_y])
 
